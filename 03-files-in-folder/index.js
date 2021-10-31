@@ -4,9 +4,7 @@ const path = require('path');
 const directory = path.join(__dirname, 'secret-folder');
 
 fs.readdir(directory, {withFileTypes: true}, function(err, items) {
-  console.log(items);
-
-  items.forEach(elem => {
+   items.forEach(elem => {
     if(elem.isFile()){
       fs.stat(path.join(directory, elem.name), (err, stats) => {
         if (err) throw err;
